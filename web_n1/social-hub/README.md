@@ -1,69 +1,75 @@
 # Social Hub
 
-A modern social media application built with React and Node.js. Share messages, reply to posts, and connect with others!
+Um aplicativo moderno de rede social desenvolvido com React e Node.js. Compartilhe mensagens, responda a postagens e conecte-se com outras pessoas!
 
-## 🚀 Features
+## 🚀 Funcionalidades
 
-- **User Authentication**: Sign up and login with email/password
-- **Messages**: Create, view, and delete messages
-- **Replies**: Comment on messages with pagination
-- **Modern UI**: Beautiful gradient design with smooth animations
-- **Responsive**: Works on desktop and mobile devices
+* **Autenticação de Usuário**: Cadastro e login com e-mail/senha
+* **Mensagens**: Criar, visualizar e excluir mensagens
+* **Respostas**: Comentar mensagens com paginação
+* **Interface Moderna**: Design com gradientes e animações suaves
+* **Responsivo**: Funciona em computadores e dispositivos móveis
 
-## 🛠️ Tech Stack
+## 🛠️ Tecnologias Utilizadas
 
 ### Backend
-- Node.js + Express.js
-- PostgreSQL + Prisma ORM
-- JWT Authentication
-- Zod Validation
+
+* Node.js + Express.js
+* PostgreSQL + Prisma ORM
+* Autenticação com JWT
+* Validação com Zod
 
 ### Frontend
-- React 18
-- React Router DOM
-- Axios
-- CSS3 with animations
 
-## 📋 Prerequisites
+* React 18
+* React Router DOM
+* Axios
+* CSS3 com animações
 
-- Node.js v18+
-- PostgreSQL v12+
-- npm or pnpm
+## 📋 Pré-requisitos
 
-## 🔧 Installation
+* Node.js v18+
+* PostgreSQL v12+
+* npm ou pnpm
 
-### 1. Clone the repository
+## 🔧 Instalação
+
+### 1. Clonar o repositório
+
 ```bash
 git clone <repository-url>
 cd social-hub
 ```
 
-### 2. Setup Backend
+### 2. Configurar o Backend
 
 ```bash
 cd server
 cp .env.example .env
-# Edit .env with your PostgreSQL credentials
+# Edite o arquivo .env com suas credenciais do PostgreSQL
 ```
 
-Install dependencies:
+Instalar dependências:
+
 ```bash
 npm install
 ```
 
-Setup database:
+Configurar o banco de dados:
+
 ```bash
 npx prisma migrate dev --name init
 ```
 
-Start server:
+Iniciar o servidor:
+
 ```bash
 npm run dev
 ```
 
-Server will run on `http://localhost:3000`
+O servidor será executado em `http://localhost:3000`
 
-### 3. Setup Frontend
+### 3. Configurar o Frontend
 
 ```bash
 cd ../client
@@ -71,60 +77,63 @@ npm install
 npm run dev
 ```
 
-Frontend will run on `http://localhost:5173`
+O frontend será executado em `http://localhost:5173`
 
-## 📚 API Endpoints
+## 📚 Endpoints da API
 
-### Authentication
-- `POST /api/session/signup` - Create new account
-- `POST /api/session/login` - Login
-- `GET /api/session/me` - Get current user
-- `POST /api/session/logout` - Logout
-- `POST /api/session/check` - Check if email exists
+### Autenticação
 
-### Messages (Feed)
-- `GET /api/feed` - Get all messages
-- `POST /api/feed` - Create message
-- `DELETE /api/feed/:id` - Delete message
+* `POST /api/session/signup` - Criar nova conta
+* `POST /api/session/login` - Fazer login
+* `GET /api/session/me` - Obter usuário atual
+* `POST /api/session/logout` - Fazer logout
+* `POST /api/session/check` - Verificar se o e-mail existe
 
-### Replies (Comments)
-- `GET /api/reply/:messageId` - Get replies for a message
-- `POST /api/reply` - Create reply
-- `DELETE /api/reply/:id` - Delete reply
+### Mensagens (Feed)
 
-## 🎨 Design Features
+* `GET /api/feed` - Obter todas as mensagens
+* `POST /api/feed` - Criar mensagem
+* `DELETE /api/feed/:id` - Excluir mensagem
 
-- **Gradient backgrounds**: Purple to blue gradients
-- **Smooth animations**: Fade-in and slide-down effects
-- **Interactive cards**: Hover effects and transitions
-- **Character counter**: Real-time message length feedback
-- **Modal dialogs**: For viewing full messages and replies
-- **Confirmation dialogs**: Before deleting content
+### Respostas (Comentários)
 
-## 📝 Project Structure
+* `GET /api/reply/:messageId` - Obter respostas de uma mensagem
+* `POST /api/reply` - Criar resposta
+* `DELETE /api/reply/:id` - Excluir resposta
+
+## 🎨 Recursos de Design
+
+* **Fundos em gradiente**: tons de roxo para azul
+* **Animações suaves**: efeitos de fade-in e slide-down
+* **Cartões interativos**: efeitos de hover e transições
+* **Contador de caracteres**: feedback em tempo real
+* **Modais**: para visualizar mensagens e respostas completas
+* **Diálogos de confirmação**: antes de excluir conteúdo
+
+## 📝 Estrutura do Projeto
 
 ```
 social-hub/
 ├── server/
 │   ├── src/
 │   │   ├── routes/
-│   │   │   ├── session.js    (Authentication)
-│   │   │   ├── feed.js       (Messages)
-│   │   │   └── reply.js      (Comments)
+│   │   │   ├── session.js    (Autenticação)
+│   │   │   ├── feed.js       (Mensagens)
+│   │   │   └── reply.js      (Comentários)
 │   │   ├── middleware/
-│   │   │   └── verify.js     (JWT verification)
+│   │   │   └── verify.js     (Verificação JWT)
 │   │   ├── lib/
-│   │   │   └── db.js         (Prisma client)
-│   │   └── index.js          (Server entry)
+│   │   │   └── db.js         (Cliente Prisma)
+│   │   └── index.js          (Entrada do servidor)
 │   ├── prisma/
-│   │   └── schema.prisma     (Database schema)
+│   │   └── schema.prisma     (Esquema do banco de dados)
 │   └── package.json
 │
 └── client/
     ├── src/
     │   ├── pages/
-    │   │   ├── AuthPage.jsx   (Login/Signup)
-    │   │   └── FeedPage.jsx   (Main feed)
+    │   │   ├── AuthPage.jsx   (Login/Cadastro)
+    │   │   └── FeedPage.jsx   (Feed principal)
     │   ├── components/
     │   │   ├── MessageCard.jsx
     │   │   └── MessageModal.jsx
@@ -132,32 +141,34 @@ social-hub/
     │   │   ├── global.css
     │   │   ├── auth.css
     │   │   └── feed.css
-    │   ├── api.js             (API client)
-    │   ├── App.jsx            (Main component)
-    │   └── main.jsx           (Entry point)
+    │   ├── api.js             (Cliente da API)
+    │   ├── App.jsx            (Componente principal)
+    │   └── main.jsx           (Ponto de entrada)
     └── package.json
 ```
 
-## 🔐 Security
+## 🔐 Segurança
 
-- Passwords hashed with bcrypt (cost factor 11)
-- JWT tokens stored in HTTP-only cookies
-- CORS enabled for localhost
-- Rate limiting on authentication endpoints
-- Input validation with Zod
+* Senhas criptografadas com bcrypt (fator de custo 11)
+* Tokens JWT armazenados em cookies HTTP-only
+* CORS habilitado para localhost
+* Limite de requisições nos endpoints de autenticação
+* Validação de entradas com Zod
 
-## 📱 Responsive Design
+## 📱 Design Responsivo
 
-The application is fully responsive and works on:
-- Desktop (1920px and above)
-- Tablet (768px to 1024px)
-- Mobile (320px to 767px)
+O aplicativo é totalmente responsivo e funciona em:
 
-## 🚀 Deployment
+* Desktop (1920px ou mais)
+* Tablet (768px a 1024px)
+* Mobile (320px a 767px)
 
-To build for production:
+## 🚀 Implantação
+
+Para construir para produção:
 
 **Backend:**
+
 ```bash
 cd server
 npm run build
@@ -165,20 +176,21 @@ npm start
 ```
 
 **Frontend:**
+
 ```bash
 cd client
 npm run build
 npm run preview
 ```
 
-## 📄 License
+## 📄 Licença
 
-MIT License - feel free to use this project for any purpose.
+Licença MIT — sinta-se livre para usar este projeto para qualquer finalidade.
 
-## 👨‍💻 Author
+## 👨‍💻 Autor
 
-Created as a modern social media platform example.
+Criado como exemplo de uma plataforma moderna de rede social.
 
 ---
 
-**Last Updated**: November 2025
+**Última atualização**: Novembro de 2025
